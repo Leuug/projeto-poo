@@ -1,0 +1,20 @@
+{
+  "files": {
+    "Main.java": [
+      {
+        "id": "43c366f9-21f0-460f-a80a-a81e890578d2",
+        "line": 14,
+        "version": 46,
+        "index": 239
+      }
+    ],
+    "src/GUIHandler.java": [
+      {
+        "id": "86262e80-82e6-4c0f-8bb8-05bb762a5eda",
+        "line": 89,
+        "version": 116,
+        "index": 2298
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-compile = "javac -classpath ./lib/*.jar:.:target/dependency/* -d ./bin/ $(find . -type f -name '*.java')"
-run = ["java", "-classpath", "./lib/*:./bin/", "Main"]
+compile = "make clean && make all"
+run = "make run"
 
 entrypoint = "Main.java"
 hidden = ["**/*.class"]

@@ -5,7 +5,7 @@ JCFLAGS :=
 
 SRCDIR := src
 BINDIR := bin
-
+LIBDIR := lib
 
 # ARGUMENTOS
 focus:=
@@ -17,12 +17,14 @@ endif
 
 # INDENTIFICANDO O SISTEMA OPERACIONAL
 ifeq ($(OS),Windows_NT)
+	AND:=;
 	MKDIR:=mkdir
 	RM:=del /s /q
 	MAKE:=mingw32-make
 	CLEAR:=cls
 	NEWLINE:=@echo.
 else
+	AND:=:
 	PROGRAM:=bin/$(EXE)
 	MKDIR:=mkdir -p
 	RM:=rm -rfv
@@ -55,7 +57,7 @@ default: all
 all: $(BINDIR) $(CLASSFILES)
 
 run: $(CLASSFILES)
-	$(JR) -cp $(BINDIR) $(focus)
+	$(JR) -cp $(LIBDIR)/*$(AND)$(BINDIR) $(focus)
 
 clean:
 	@$(RM) $(wildcard $(BINDIR)/*.class)

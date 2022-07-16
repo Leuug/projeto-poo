@@ -1,7 +1,7 @@
-// import java.awt.*;
-// import java.awt.event.*;
-// import java.io.IOException;
-// import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.IOException;
+import javax.swing.*;
 
 public class AnswerGUI extends JFrame implements ActionListener {
     GUIHandler guihander;
@@ -17,10 +17,10 @@ public class AnswerGUI extends JFrame implements ActionListener {
     public String movie4name =
         "THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING";
 
-    public String movie1file = "./Images/alien.jpg";
-    public String movie2file = "./Images/apsycho.jpg";
-    public String movie3file = "./Images/rotla.jpg";
-    public String movie4file = "./Images/tlotrtfotr.jpg";
+    public String movie1file = "./img/alien.jpg";
+    public String movie2file = "./img/apsycho.jpg";
+    public String movie3file = "./img/rotla.jpg";
+    public String movie4file = "./img/tlotrtfotr.jpg";
 
     public AnswerGUI(GUIHandler _guihander) throws IOException {
         super("Answer");

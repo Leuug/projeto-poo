@@ -20,7 +20,7 @@ public class ImageGUI extends JFrame {
         JPanel jp = (JPanel)this.getContentPane();
         jp.add(new JLabel("Alien"));
 
-        moviePicture = ImageIO.read(new File("./Images/rotla.jpg"));
+        moviePicture = ImageIO.read(new File("./img/rotla.jpg"));
         pictureHeight = (int)(moviePicture.getWidth() / downsize);
         pictureWidth = (int)(moviePicture.getHeight() / downsize);
         picture = new JLabel(new ImageIcon(moviePicture.getScaledInstance(

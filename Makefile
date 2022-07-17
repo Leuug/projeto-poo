@@ -1,11 +1,15 @@
 # CONFIGURAÇÕES
 JC := javac
 JR := java
-JCFLAGS := 
 
 SRCDIR := src
 BINDIR := bin
 LIBDIR := lib
+
+JARFILES := $(wildcard $(LIBDIR)/*.jar)
+
+CP := $(BINDIR)$(foreach jarfile,$(JARFILES),:$(jarfile))
+
 
 # ARGUMENTOS
 focus:=
@@ -17,14 +21,12 @@ endif
 
 # INDENTIFICANDO O SISTEMA OPERACIONAL
 ifeq ($(OS),Windows_NT)
-	AND:=;
 	MKDIR:=mkdir
 	RM:=del /s /q
 	MAKE:=mingw32-make
 	CLEAR:=cls
 	NEWLINE:=@echo.
 else
-	AND:=:
 	PROGRAM:=bin/$(EXE)
 	MKDIR:=mkdir -p
 	RM:=rm -rfv
@@ -36,7 +38,7 @@ endif
 
 
 # BUSCANDO ARQUIVOS E DEFININDO ESPECTATIVAS
-JAVAFILES := $(wildcard $(SRCDIR)/*.java)
+JAVAFILES := $(wildcard $(SRCDIR)/*.java) $(wildcard $(SRCDIR)/%/*.java)
 CLASSFILES := $(subst $(SRCDIR),$(BINDIR),$(subst .java,.class,$(JAVAFILES)))
 
 
@@ -57,17 +59,17 @@ default: all
 all: $(BINDIR) $(CLASSFILES)
 
 run: $(CLASSFILES)
-	$(JR) -cp $(LIBDIR)/*$(AND)$(BINDIR) $(focus)
+	$(JR) -cp $(CP) $(focus)
 
 clean:
-	@$(RM) $(wildcard $(BINDIR)/*.class)
+	@$(RM) $(wildcard $(BINDIR)/*)
 
 fresh: clean all
 
 
 # COMPILANDO E CRIANDO ELEMENTOS
 $(CLASSFILES): $(call getJavaFile,$@)
-	$(JC) -sourcepath $(SRCDIR) -d $(BINDIR) $(call getJavaFile,$@)
+	$(JC) -cp $(CP) -sourcepath $(SRCDIR) -d $(BINDIR) $(call getJavaFile,$@)
 
 $(BINDIR):
 	$(MKDIR) $(BINDIR)

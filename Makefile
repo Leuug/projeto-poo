@@ -75,8 +75,18 @@ $(BINDIR):
 	$(MKDIR) $(BINDIR)
 
 
+# TARGETS PARA SCRIPTS
+question:
+	python3 scripts/QuestionMaker.py
+
 # TARGETS PARA UTILIDADES SECUNDÁRIAS
-debian-setup:
+debian-java-setup:
 	sudo apt update && sudo apt upgrade -y
 	sudo apt-get install openjdk-17-jre -y
 	sudo apt-get install openjdk-17-jdk -y
+
+debian-python-setup:
+	sudo apt-get install python3-pip
+	pip3 install Unidecode
+
+debian-setup: debian-java-setup debian-python-setup

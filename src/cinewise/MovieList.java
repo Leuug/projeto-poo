@@ -131,29 +131,48 @@ public class MovieList
 		return null;
 	}
 
-	@Override
-	public String toString()
-	{
-		String movieListString = "";
 
-		for (Movie movie : moviesList)
-		{
-			movieListString = movieListString + "Name: " + movie.getName() + "\nSynopsis: " + movie.getSynopsis() + "\nPath: " + movie.getPath() + "\n------------------------------------------------------\n";
-		}
-
-		return movieListString;
-	}
-
+	/**
+	 * Busca um filme na lista por meio de um índicie.
+	 * @param index O índicie do filme a ser buscado.
+	 * @return Um filme ou null.
+	 */
 	public Movie getMovie (int index)
 	{
 		if (0 > index || index >= this.moviesList.size()) return null;
 		return this.moviesList.get(index);
 	}
 
-	public Movie getFirstMovie ()
+
+	/**
+	 * @return O primeiro filme da lista.
+	 */
+	public Movie getMovie ()
 	{
 		return this.getMovie(0);
 	}
+
+
+	@Override
+	public String toString()
+	{
+		// TRATANDO ERROS
+		if (null == moviesList) return "null\n";
+
+		// CONSTANTES
+		String separator = 
+			"\n------------------------------------------------------\n";
+
+		// INICIALIZANDO VARIÁVEIS
+		String movieListString = "";
+
+		// CONCATENANDO A STRING DE TODOS OS FILMES DA LISTA
+		for (Movie movie : this.moviesList)
+			movieListString += movie.toString() + separator;
+		
+		return movieListString;
+	}
+
 
 	/**
 	 * Útil para a etapa de testes.

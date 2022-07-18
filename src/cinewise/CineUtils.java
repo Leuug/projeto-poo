@@ -18,6 +18,7 @@ public class CineUtils
 	 */
 	public static String standardize(String input)
 	{
+		if (null == input) return null;
 		return removeAccents(input).toLowerCase().strip();
 	}
 

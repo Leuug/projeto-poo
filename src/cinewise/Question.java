@@ -10,15 +10,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
+
 // ENUNS
 /**
- * 
+ * Esse enum contem os tipos de questões possíveis.
  */
 enum QuestionType {
 	MUTIPLE_CHOISE,
 	TRUE_OR_FALSE,
 	ESSAY
 }
+
 
 /**
  * Encapsula uma pergunta e contem dados relevantes para exibir essa pergunta
@@ -54,9 +56,9 @@ public class Question
 	{
 		this (
 			MovieSource,
-			(int) jsonObject.get("id"),
-			QuestionType.values()[(int) jsonObject.get("type")],
-			(int) jsonObject.get("difficulty"),
+			Math.toIntExact((long) jsonObject.get("id")),
+			QuestionType.values()[Math.toIntExact((long) jsonObject.get("type"))],
+			Math.toIntExact((long) jsonObject.get("difficulty")),
 			(String) jsonObject.get("inquiry"),
 			(String) jsonObject.get("answer"),
 			CineUtils.jsonToArray((JSONArray) jsonObject.get("movieNames"))
@@ -76,9 +78,9 @@ public class Question
 		answer = CineUtils.standardize(answer);
 		
 		// CHECANDO SE A RESPOSTA ESTÁ CORRETA DE ACORDO COM O TIPO DA PERGUNTA
-		switch (this.type):
+		switch (this.type)
 		{
-			case MUTIPLE_CHOISE: 
+			case MUTIPLE_CHOISE:
 				return this.correctAnswer.equals(answer);
 			default: 
 				throw new Exception ("The question is of an unknown type.");
@@ -89,12 +91,13 @@ public class Question
 	
 	/**
 	 * Avalia se determinada resposta está correta.
-	 * @param answer
-	 * @return 
-	 * @throws Exception
+	 * @param answer A resposta dada pelo usuário.
+	 * @return true se a resposta estiver correta e false caso contrário.
+	 * @throws Exception Caso o tipo da pergunta não seja conhecido.
 	 */
 	public boolean evaluate (int answer) throws Exception
 	{
-		return this.correctAnswer.equals(Integer.toString(answer));
+		return this.evaluate(Integer.toString(answer));
 	}
+
 }

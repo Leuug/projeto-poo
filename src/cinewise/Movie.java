@@ -1,14 +1,10 @@
 // PACOTE AO QUAL ESSA CLASSE PERTENCE
 package cinewise;
 
-// IMPORTANDO PACOTES ÚTEIS DO JAVA
-import java.lang.Math.*;
+import java.lang.annotation.Retention;
 
 // IMPORTANDO PACOTES PARA A MANIPULAÇÃO DE ARQUIVOS JSON
 import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.ParseException;
-import org.json.simple.parser.JSONParser;
 
 
 /**
@@ -70,5 +66,15 @@ public class Movie
 	public String getPath()
 	{
 		return this.moviePath;
+	}
+
+
+	@Override
+	public String toString()
+	{
+		return 
+			"Name: " + this.getName() + "\n" +
+			"Synopsis: " + this.getSynopsis() + "\n" +
+			"Path: " + this.getPath() ;
 	}
 }

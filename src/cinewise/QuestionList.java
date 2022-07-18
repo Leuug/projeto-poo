@@ -19,15 +19,15 @@ import org.json.simple.parser.JSONParser;
 
 
 /**
- * Representa uma lista de filmes. Essa classe serve como lista de instâncias 
- * 	da classe 'Movie'.
+ * Representa uma lista de questões. Essa classe serve como lista de instâncias 
+ * 	da classe 'Question'.
  * 
  * @author Bernardo Maia Coelho (12542481) e {...}
- * @see cinewise.Movie
+ * @see cinewise.Question
  */
 public class QuestionList
 {
-    private Ramdom random;
+    private Random random;
     private MovieList movieList;
 	private ArrayList<Question> questionList;
 
@@ -35,14 +35,14 @@ public class QuestionList
 	public QuestionList()
 	{
         this.random = new Random();
-		this.moviesList = new MovieList();
+		this.movieList = new MovieList();
         this.questionList = new ArrayList<Question>();
 	}
 
     public QuestionList(MovieList movieList)
 	{
         this.random = new Random();
-		this.moviesList = movieList;
+		this.movieList = movieList;
         this.questionList = new ArrayList<Question>();
 	}
 
@@ -108,7 +108,8 @@ public class QuestionList
      */
     public Question getRandQuestion ()
     {
-        this.questionList.get(this.random.nextInt(this.questionList.size()));
+        return this.questionList
+			.get(this.random.nextInt(this.questionList.size()));
     }
 
 

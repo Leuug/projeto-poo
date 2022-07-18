@@ -151,6 +151,17 @@ public class CineSession {
         return this.currentQuestion.movieList.getMovie(index);
     }
 
+
+    /**
+     * Retorna a lista de filmes da questão atual.
+     * @return Uma lista de filmes ou null.
+     */
+    public MovieList getMovieList ()
+    {
+        return this.currentQuestion.movieList;
+    }
+
+    
     /**
      * Busca o primeiro filme da lista de filmes da pergunta atual.
      * @return Um filme ou null.
@@ -166,12 +177,12 @@ public class CineSession {
      * @return O caminho para a imagem do poster do filme.
      * @throws Exception Caso não haja pergunta atual.
      */ 
-    public int getMoviePath() throws Exception
+    public String getMoviePath() throws Exception
 	{
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");
         
-        return this.getMovie().moviePath;
+        return this.getMovie().getPath();
 	}
 
 
@@ -180,7 +191,7 @@ public class CineSession {
      * @return O nome do filme.
      * @throws Exception Caso não haja pergunta atual.
      */ 
-    public int getMovieName() throws Exception
+    public String getMovieName() throws Exception
 	{
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");
@@ -194,7 +205,7 @@ public class CineSession {
      * @return A string sinopse.
      * @throws Exception Caso não haja pergunta atual.
      */ 
-    public int getSynopsis() throws Exception
+    public String getSynopsis() throws Exception
 	{
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");

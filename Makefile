@@ -8,7 +8,8 @@ LIBDIR := lib
 
 JARFILES := $(wildcard $(LIBDIR)/*.jar)
 
-CP := $(BINDIR)$(foreach jarfile,$(JARFILES),:$(jarfile))
+ESCAPE_SPACE = $(subst _,,_ _)
+CP := $(BINDIR)$(subst $(ESCAPE_SPACE),,$(foreach jarfile,$(JARFILES),:$(strip $(jarfile))))
 
 
 # ARGUMENTOS
@@ -65,6 +66,17 @@ clean:
 	@$(RM) $(wildcard $(BINDIR)/*)
 
 fresh: clean all
+
+
+# TARGETS PRÁTICOS
+clear: clean
+	$(CLEAR)
+
+rerun:
+	$(make) clean
+	$(make) all
+	$(CLEAR)
+	$(MAKE) run
 
 
 # COMPILANDO E CRIANDO ELEMENTOS

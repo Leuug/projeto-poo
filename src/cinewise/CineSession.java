@@ -140,6 +140,66 @@ public class CineSession {
         this.score += increment;
     }
 
+    /**
+     * Retorna um filme em determinado indicie da lista de filmes da pergunta
+     *  atual.
+     * @param index Índicie do filme a ser retornado.
+     * @return Um filme ou null.
+     */
+    public Movie getMovie (int index)
+    {
+        return this.currentQuestion.movieList.getMovie(index);
+    }
 
+    /**
+     * Busca o primeiro filme da lista de filmes da pergunta atual.
+     * @return Um filme ou null.
+     */
+    public Movie getMovie ()
+    {
+        return this.currentQuestion.movieList.getMovie(0);
+    }
+
+    /**
+     * Busca o caminho para a imagem do poster do primeiro filme da lista
+     *  de filmes da pergunta atual.
+     * @return O caminho para a imagem do poster do filme.
+     * @throws Exception Caso não haja pergunta atual.
+     */ 
+    public int getMoviePath() throws Exception
+	{
+		if (null == this.currentQuestion) 
+            throw new Exception("Current question is a null.");
+        
+        return this.getMovie().moviePath;
+	}
+
+
+    /**
+     * Retorna o nome do primeiro filme da lista de filmes da pergunta atual.
+     * @return O nome do filme.
+     * @throws Exception Caso não haja pergunta atual.
+     */ 
+    public int getMovieName() throws Exception
+	{
+		if (null == this.currentQuestion) 
+            throw new Exception("Current question is a null.");
+        
+        return this.getMovie().getName();
+	}
+
+
+    /**
+     * Retorna a sinopse do primeiro filme da lista de filmes da pergunta atual.
+     * @return A string sinopse.
+     * @throws Exception Caso não haja pergunta atual.
+     */ 
+    public int getSynopsis() throws Exception
+	{
+		if (null == this.currentQuestion) 
+            throw new Exception("Current question is a null.");
+        
+        return this.getMovie().getSynopsis();
+	}
 }
 

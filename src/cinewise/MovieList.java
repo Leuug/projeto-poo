@@ -144,6 +144,16 @@ public class MovieList
 		return movieListString;
 	}
 
+	public Movie getMovie (int index)
+	{
+		if (0 > index || index >= this.moviesList.size()) return null;
+		return this.moviesList.get(index);
+	}
+
+	public Movie getFirstMovie ()
+	{
+		return this.getMovie(0);
+	}
 
 	/**
 	 * Útil para a etapa de testes.

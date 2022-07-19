@@ -78,6 +78,8 @@ rerun:
 	$(CLEAR)
 	$(MAKE) run
 
+hello:
+	@echo 'Hello World!'
 
 # COMPILANDO E CRIANDO ELEMENTOS
 $(CLASSFILES): $(call getJavaFile,$@)

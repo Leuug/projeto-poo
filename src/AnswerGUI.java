@@ -11,8 +11,6 @@ public class AnswerGUI extends JFrame implements ActionListener {
     JButton movie3Button;
     JButton movie4Button;
 
-    boolean active;
-
     public String movie1name = "ALIEN";
     public String movie2name = "AMERICAN PSYCHO";
     public String movie3name = "RAIDERS OF THE LOST ARK";
@@ -27,8 +25,6 @@ public class AnswerGUI extends JFrame implements ActionListener {
     public AnswerGUI(GUIHandler _guihander) throws Exception {
         super("Answer");
         guihander = _guihander;
-
-        this.active = true;
 
         JPanel guiPanel = (JPanel)this.getContentPane();
         guiPanel.setLayout(new GridLayout(2, 2, 1, 1));
@@ -62,8 +58,10 @@ public class AnswerGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.active) this.active = false;
-        else return;
+        this.movie1Button.setEnabled(false);
+        this.movie2Button.setEnabled(false);
+        this.movie3Button.setEnabled(false);
+        this.movie4Button.setEnabled(false);
 
         if ("movie1".equals(e.getActionCommand())) {
             AnswerPoster(movie1name);
@@ -80,15 +78,10 @@ public class AnswerGUI extends JFrame implements ActionListener {
         guihander.SetAnswer(movieName);
     }
 
-	public void SetImage(String imageDir)
-	{
-		imageFrame.SetImage(imageDir);
-	}
+    public void SetImage(String imageDir) { imageFrame.SetImage(imageDir); }
 
-    public void SetMovies(String _movie1name,
-                          String _movie2name,
-                          String _movie3name,
-                          String _movie4name) {
+    public void SetMovies(String _movie1name, String _movie2name,
+                          String _movie3name, String _movie4name) {
         this.movie1name = _movie1name;
 
         this.movie2name = _movie2name;
@@ -100,9 +93,12 @@ public class AnswerGUI extends JFrame implements ActionListener {
         this.refresh();
     }
 
-    public void refresh ()
-    {
-        this.active = true;
+    public void refresh() {
+        this.movie1Button.setEnabled(true);
+        this.movie2Button.setEnabled(true);
+        this.movie3Button.setEnabled(true);
+        this.movie4Button.setEnabled(true);
+
         this.movie1Button.setText(this.movie1name);
         this.movie2Button.setText(this.movie2name);
         this.movie3Button.setText(this.movie3name);

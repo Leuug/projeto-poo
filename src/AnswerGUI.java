@@ -22,7 +22,7 @@ public class AnswerGUI extends JFrame implements ActionListener {
     public String movie3file = "./img/rotla.jpg";
     public String movie4file = "./img/tlotrtfotr.jpg";
 
-    public AnswerGUI(GUIHandler _guihander) throws IOException {
+    public AnswerGUI(GUIHandler _guihander) throws Exception {
         super("Answer");
         guihander = _guihander;
 
@@ -73,20 +73,21 @@ public class AnswerGUI extends JFrame implements ActionListener {
         guihander.SetAnswer(movieName);
     }
 
-    public void SetMovies(String _movie1name, String _movie1file,
-                          String _movie2name, String _movie2file,
-                          String _movie3name, String _movie3file,
-                          String _movie4name, String _movie4file) {
+	public void SetImage(String imageDir)
+	{
+		imageFrame.SetImage(imageDir);
+	}
+
+    public void SetMovies(String _movie1name,
+                          String _movie2name,
+                          String _movie3name,
+                          String _movie4name) {
         this.movie1name = _movie1name;
-        this.movie1file = _movie1file;
 
         this.movie2name = _movie2name;
-        this.movie2file = _movie2file;
 
         this.movie3name = _movie3name;
-        this.movie3file = _movie3file;
 
         this.movie4name = _movie4name;
-        this.movie4file = _movie4file;
     }
 }

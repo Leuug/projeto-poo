@@ -1,45 +1,71 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.*;
 import javax.swing.*;
 
-public class StartMenu extends JFrame {
-	private JPanel mainPanel;
-	private JPanel buttonsPanel;
-	private JButton startButton;
-	private JButton quitButton;
+public class StartMenu extends JFrame implements ActionListener {
+    private JPanel mainPanel;
+    private JButton startButton;
+    private JButton quitButton;
+    private JLabel nomeLabel;
 
-	private int xButtonSize = 300;
-	private int yButtonSize = 200;
-	
-	public StartMenu() {
-		mainPanel = (JPanel)this.getContentPane();
-		mainPanel.setLayout(new GridBagLayout());
+    private String START = "start";
+    private String QUIT = "quit";
 
-		buttonsPanel = new JPanel();
-		buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.PAGE_AXIS));
-		//buttonsPanel.add(Box.createVerticalGlue());
+    public StartMenu() throws Exception {
+        mainPanel = (JPanel)this.getContentPane();
+        mainPanel.setLayout(new GridBagLayout());
 
-		//buttonsPanel.add(Box.createHorizontalGlue());
-		startButton = new JButton("Start!");
-		startButton.setMaximumSize(new Dimension(xButtonSize, yButtonSize));
-		startButton.setMinimumSize(new Dimension(xButtonSize, yButtonSize));
-		buttonsPanel.add(startButton);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(2, 2, 40, 2);
 
-		quitButton = new JButton("Quit!");
-		quitButton.setMaximumSize(new Dimension(xButtonSize, yButtonSize));
-		quitButton.setMinimumSize(new Dimension(xButtonSize, yButtonSize));
-		buttonsPanel.add(quitButton);
+        nomeLabel = new JLabel(
+            "<html><font size=+2><font color=purple><b>Movie Quizz</b></font></html>");
+        constraints.gridy = 0;
+        mainPanel.add(nomeLabel, constraints);
 
-		//buttonsPanel.add(Box.createVerticalGlue());
-		mainPanel.add(buttonsPanel, new GridBagConstraints());
-		
-	    setSize(500, 400);
-	}
+        constraints.insets = new Insets(2, 2, 2, 2);
 
-	public static void main(String[] args) {
-		StartMenu frame = new StartMenu();
+        startButton = new JButton("Start!");
+        startButton.addActionListener(this);
+        startButton.setActionCommand(START);
+        constraints.gridy = 1;
+        mainPanel.add(startButton, constraints);
+
+        quitButton = new JButton("Quit!");
+        quitButton.addActionListener(this);
+        quitButton.setActionCommand(QUIT);
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        mainPanel.add(quitButton, constraints);
+
+        setSize(500, 400);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (START.equals(e.getActionCommand())) {
+            this.setVisible(false);
+
+            // CineSession session = new CineSession(0);
+            try {
+                GUIHandler frame = new GUIHandler();
+                frame.setSize(300, 150);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            } catch (Exception err) {
+                System.out.print("Não foi possivel iniciar GUIHandler");
+            }
+        } else {
+            System.exit(0);
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        StartMenu frame = new StartMenu();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-	}
+    }
 }

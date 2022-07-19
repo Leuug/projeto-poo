@@ -60,7 +60,6 @@ default: all
 
 # TARGETS IMPORTANTES
 all: $(BINDIR) $(CLASSFILES)
-	@echo $(BINDIR) $(CLASSFILES)
 
 run: $(CLASSFILES)
 	$(JR) -cp $(CP) $(focus)

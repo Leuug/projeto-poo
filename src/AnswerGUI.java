@@ -11,20 +11,24 @@ public class AnswerGUI extends JFrame implements ActionListener {
     JButton movie3Button;
     JButton movie4Button;
 
+    boolean active;
+
     public String movie1name = "ALIEN";
     public String movie2name = "AMERICAN PSYCHO";
     public String movie3name = "RAIDERS OF THE LOST ARK";
     public String movie4name =
         "THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING";
 
-    public String movie1file = "./img/alien.jpg";
-    public String movie2file = "./img/apsycho.jpg";
-    public String movie3file = "./img/rotla.jpg";
-    public String movie4file = "./img/tlotrtfotr.jpg";
+    // public String movie1file = "./img/alien.jpg";
+    // public String movie2file = "./img/apsycho.jpg";
+    // public String movie3file = "./img/rotla.jpg";
+    // public String movie4file = "./img/tlotrtfotr.jpg";
 
     public AnswerGUI(GUIHandler _guihander) throws Exception {
         super("Answer");
         guihander = _guihander;
+
+        this.active = true;
 
         JPanel guiPanel = (JPanel)this.getContentPane();
         guiPanel.setLayout(new GridLayout(2, 2, 1, 1));
@@ -58,6 +62,9 @@ public class AnswerGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (this.active) this.active = false;
+        else return;
+
         if ("movie1".equals(e.getActionCommand())) {
             AnswerPoster(movie1name);
         } else if ("movie2".equals(e.getActionCommand())) {
@@ -89,5 +96,16 @@ public class AnswerGUI extends JFrame implements ActionListener {
         this.movie3name = _movie3name;
 
         this.movie4name = _movie4name;
+
+        this.refresh();
+    }
+
+    public void refresh ()
+    {
+        this.active = true;
+        this.movie1Button.setText(this.movie1name);
+        this.movie2Button.setText(this.movie2name);
+        this.movie3Button.setText(this.movie3name);
+        this.movie4Button.setText(this.movie4name);
     }
 }

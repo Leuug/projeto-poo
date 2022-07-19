@@ -1,3 +1,9 @@
 *.class
 *.vscode
 bin
+./bin/*
+bin/AnswerGUI.class
+bin/GUIHandler.class
+bin/ImageGUI.class
+bin/StartMenu.class
+bin/*.class

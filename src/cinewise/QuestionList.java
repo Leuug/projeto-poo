@@ -108,6 +108,12 @@ public class QuestionList
      */
     public Question getRandQuestion ()
     {
+		if (this.questionList.size() <= 0) 
+		{
+			System.out.println("O tamanho é zero!!!\n");
+			return null;
+		}
+
         return this.questionList
 			.get(this.random.nextInt(this.questionList.size()));
     }

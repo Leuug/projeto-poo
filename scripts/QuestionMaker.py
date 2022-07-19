@@ -29,12 +29,15 @@ while active:
         "type": int(input("Qual é o typo da questão? ").strip()),
         "difficulty": int(input("Qual é a dificuldade da questão? ").strip()),
         "correctAnswer": input("Qual é a resposta correta? ").strip(),
-        "movieNames": []
+        "movieNames": [input("Qual é o nome do filme sendo usando como referência? ")],
+        "more": {}
     }
 
-    n = int(input("Quantas referências a filmes essa questão usa? "))
-    for i in range(n):
-        newQuestion["movieNames"].append(input("Digite o nome do filme número {}: ".format(i)))
+    if 1 == newQuestion["id"]:
+        number = int(input("Número de respostas erradas: "))
+        newQuestion["more"]["wrongAnswers"] = []
+        for i in range(number):
+            newQuestion["more"]["wrongAnswers"].append(input("Resposta errada {}: ".format(i + 1)))
     
     questions.append(newQuestion)
     answer = input("Deseja cadastrar mais uma pergunta? [S/n] ").strip().lower()

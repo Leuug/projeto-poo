@@ -39,7 +39,7 @@ endif
 
 
 # BUSCANDO ARQUIVOS E DEFININDO ESPECTATIVAS
-JAVAFILES := $(wildcard $(SRCDIR)/*.java) $(wildcard $(SRCDIR)/%/*.java)
+JAVAFILES := $(wildcard $(SRCDIR)/*.java) $(wildcard $(SRCDIR)/*/*.java)
 CLASSFILES := $(subst $(SRCDIR),$(BINDIR),$(subst .java,.class,$(JAVAFILES)))
 
 

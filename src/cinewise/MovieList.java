@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.io.FileReader;
+import java.util.Random;
 
 // IMPORTANDO PACOTES PARA A MANIPULAÇÃO DE ARQUIVOS JSON
 import org.json.simple.JSONObject;
@@ -26,16 +27,19 @@ import org.json.simple.parser.JSONParser;
 public class MovieList
 {
 	private ArrayList<Movie> moviesList;
-
+	private Random random;
 
 	public MovieList()
 	{
+		this.random = new Random();
 		this.moviesList = new ArrayList<>();
 	}
 
 
 	public MovieList(FileReader file)
 	{
+		this.random = new Random();
+
 		// INICIALIZANDO O CONTADOR DE LINHAS
 		int l = 1;
 
@@ -66,6 +70,8 @@ public class MovieList
 	}
 
 
+
+
 	/**
 	 * @param filepath O caminho para um json contendo informações acerca de 
 	 * 	filmes. Vale destacar que esse caminho começa no diretório do projeto,
@@ -74,6 +80,8 @@ public class MovieList
 	 */
 	public MovieList(String filepath) throws Exception 
 	{
+		this.random = new Random();
+
 		// INICIALIZANDO O LEITOR BUFFERIZADO
 		FileReader fr = new FileReader(filepath);
 		BufferedReader reader = new BufferedReader(fr);
@@ -95,6 +103,41 @@ public class MovieList
 		}
 	}
 
+	/**
+     * @return um filme aleatório da lista.
+     */
+    public Movie getRandMovie ()
+    {
+		System.out.println("Size " + this.moviesList.size() + "\n");
+		int index = this.random.nextInt(this.moviesList.size());
+		System.out.println("Size " + this.moviesList.size() + " index " + index + "\n");
+        return this.moviesList.get(index);
+    }
+
+	public MovieList setMovie (int index, Movie element)
+	{
+		this.moviesList.set(index, element);
+		return this;
+	}
+
+	public String [] getNames ()
+	{
+		int size = this.size();
+		String [] names = new String [size];
+		for (int i = 0; i < size; i++)
+			names[i] = this.moviesList.get(i).getName();
+		return names;
+	}
+
+	public int size ()
+	{
+		return this.moviesList.size();
+	}
+
+	public ArrayList<Movie> getList ()
+	{
+		return this.moviesList;
+	}
 
 	/**
 	 * Adiciona um filme à lista de filmes.
@@ -109,10 +152,39 @@ public class MovieList
 	/**
 	 * Remove um objeto filme da lista.
 	 * @param _movie O objeto filme a ser removido.
+	 * @return Uma referência para a lista de filmes. Esse valor de retorno
+	 * 	apenas existe para facilitar o encadeamento.
 	 */
-	public void RemoveMovie(Movie _movie)
+	public MovieList RemoveMovie(Movie _movie)
 	{
 		this.moviesList.remove(_movie);
+		return this;
+	}
+
+
+	public MovieList getRandList (int size)
+	{
+		if (this.size() < size) return null;
+
+		MovieList moviePool = this.copy();
+		MovieList newList = new MovieList();
+
+		for (int i = 0; i < size; i++)
+		{
+			Movie movie = moviePool.getRandMovie();
+			moviePool.RemoveMovie(movie);
+			newList.AddMovie(movie);
+		}
+
+		return newList;
+	}
+
+	public MovieList copy ()
+	{
+		MovieList newList = new MovieList();
+		for (Movie movie: this.moviesList)
+			newList.AddMovie(movie);
+		return newList;
 	}
 
 

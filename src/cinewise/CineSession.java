@@ -1,5 +1,8 @@
 package cinewise;
 
+
+import java.util.*;
+
 public class CineSession {
     // private int difficulty;
     private MovieList movieList;
@@ -37,13 +40,14 @@ public class CineSession {
     /**
      * Passa para a próxima questão.
      */
-    public void nextQuestion ()
+    public void nextQuestion () throws Exception
     {
         if (0 == this.questionList.getSize()) 
             this.currentQuestion = null;
 
         this.currentQuestion = this.questionList.getRandQuestion();
-        this.questionList.RemoveQuestion(this.currentQuestion);
+        if (this.currentQuestion.getHitHard())
+            this.questionList.RemoveQuestion(this.currentQuestion);
     }
 
     
@@ -212,5 +216,32 @@ public class CineSession {
         
         return this.getMovie().getSynopsis();
 	}
+
+    /**
+     * Uma lista de respostas erradas contendo uma resposta certa.
+     * @param choiseFactor
+     * @return
+     */
+    public String [] genMutipleChoises (int choiseFactor) throws Exception
+    {
+        return this.currentQuestion
+            .genMutipleChoises(this.movieList, choiseFactor);
+    }
+
+    public static void main(String[] args) throws Exception
+    {
+        // try
+        // {
+        CineSession cs = new CineSession(10, "data");
+        System.out.println(Arrays.toString(cs.genMutipleChoises(4)));
+        System.out.println(cs.getCorrectAnswer());
+
+        // }
+        // catch (Exception e)
+        // {
+        //     System.out.println("An error has occurred.");
+        //     System.out.println(e);
+        // }
+    }
 }
 

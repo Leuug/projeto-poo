@@ -1,3 +1,4 @@
+import cinewise.CineSession;
 import javax.swing.*;
 
 public class Main {
@@ -6,9 +7,8 @@ public class Main {
         UIManager.setLookAndFeel(
             "com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMoonlightIJTheme");
 
-        GUIHandler frame = new GUIHandler();
-        frame.setSize(300, 150);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        StartMenu startMenu = new StartMenu();
+        startMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        startMenu.setVisible(true);
     }
 }

@@ -80,8 +80,15 @@ public class Question
 			{
 				MovieList randList = movieSource.getRandList(choiseFactor);
 				int index = this.random.nextInt(randList.size());
+				System.out.println("Antes: \n");
+				System.out.println(randList);
 				randList.setMovie(index, this.currentMovie);
-				this.correctAnswer = Integer.toString(index);
+
+				System.out.println("Depois: \n");
+				
+
+				System.out.println(randList);
+				this.correctAnswer = this.currentMovie.getName();
 				return randList.getNames();
 			}
 			default: 
@@ -116,19 +123,26 @@ public class Question
 	{
 		//* OBS: Questões genéricas são usadas até a lista de filmes acabar. */
 		if (0 < this.type)
-			return this.nextMovie();
+		
+		{	
+			System.out.println("tchau!!!!!!!!!!!!!!\n");
+			return this.nextMovie();}
 		else // Questões específicas são de uso único.
-			return true; 
+		{	
+			System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			return true; }
 	}
 
 	public boolean nextMovie () throws Exception
 	{
-		if (0 > this.movieList.size()) 
+		if (0 >= this.movieList.size()) 
 			throw new Exception("Movie list is unexpectedly empty.");
 
+		System.out.println("Moving On.\n");
 		this.currentMovie = this.movieList.getRandMovie();
 		this.movieList.RemoveMovie(currentMovie);
-		return 0 < this.movieList.size();
+
+		return 0 >= this.movieList.size();
 	}
 
 

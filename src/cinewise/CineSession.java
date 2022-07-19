@@ -47,7 +47,10 @@ public class CineSession {
 
         this.currentQuestion = this.questionList.getRandQuestion();
         if (this.currentQuestion.getHitHard())
+        {    
+            System.out.println("Forte de mais\n\n");
             this.questionList.RemoveQuestion(this.currentQuestion);
+        }
     }
 
     
@@ -186,7 +189,8 @@ public class CineSession {
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");
         
-        return this.getMovie().getPath();
+        // return this.getMovie().getPath();
+        return this.currentQuestion.currentMovie.getPath();
 	}
 
 
@@ -200,7 +204,8 @@ public class CineSession {
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");
         
-        return this.getMovie().getName();
+        // return this.getMovie().getName();
+        return this.currentQuestion.currentMovie.getName();
 	}
 
 
@@ -214,7 +219,8 @@ public class CineSession {
 		if (null == this.currentQuestion) 
             throw new Exception("Current question is a null.");
         
-        return this.getMovie().getSynopsis();
+        // return this.getMovie().getSynopsis();
+        return this.currentQuestion.currentMovie.getSynopsis();
 	}
 
     /**

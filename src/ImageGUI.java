@@ -32,7 +32,7 @@ public class ImageGUI extends JFrame {
 
     public void SetImage(String imageDir) {
         try {
-            this.setTitle(imageDir);
+            // this.setTitle(imageDir);
             moviePicture = ImageIO.read(new File(imageDir));
             pictureHeight = (int)(moviePicture.getWidth() / downsize);
             pictureWidth = (int)(moviePicture.getHeight() / downsize);

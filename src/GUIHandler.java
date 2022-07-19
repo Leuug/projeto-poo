@@ -13,7 +13,7 @@ public class GUIHandler extends JFrame implements ActionListener {
 	JButton nextPosterButton;
 	CineSession session;
 
-	private boolean questionAnswered = true;
+	private boolean questionAnswered = false;
 	private String NEXTPOSTER = "next_poster";
 
 	private String answer = "";
@@ -36,13 +36,20 @@ public class GUIHandler extends JFrame implements ActionListener {
 		nextPosterButton.setActionCommand(NEXTPOSTER);
 
 		answerStatus = new JLabel("<html><font size =+1>Your answer is ...</font></html>",
-				SwingConstants.CENTER);
+		SwingConstants.CENTER);
 		mainPanel.add(answerStatus, BorderLayout.PAGE_END);
 
 		answerFrame = new AnswerGUI(this);
 		answerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		String [] answers = this.session.genMutipleChoises(4);
+		String correctAnswer = this.session.getCorrectAnswer();
+
+		System.out.println("A resposta esperada: " + correctAnswer + "\n");
+		System.out.println("As opções: " + Arrays.toString(answers) + "\n");
+		System.out.println("Ibagens: " + this.session.getMoviePath() + "\n");
+		System.out.println("Nome: " + this.session.getMovieName() + "\n");
+
 		answerFrame.SetMovies(answers[0], answers[1], answers[2], answers[3]);
 		answerFrame.SetImage(session.getMoviePath());
 
@@ -76,6 +83,7 @@ public class GUIHandler extends JFrame implements ActionListener {
 	}
 
 	public void SetAnswer(String _answer) {
+		System.out.println(answer);
 		answer = _answer;
 		questionAnswered = true;
 		try {
@@ -83,8 +91,8 @@ public class GUIHandler extends JFrame implements ActionListener {
 				answerStatus.setText("<html><font size =+1>Your answer is <font color=green>CORRECT</font></html>");
 
 				session.addToScore(100);
-
-				score.setText(String.format("<html><font size=+2><b>SCORE: $d</b></font></html>", session.getScore()));
+				String scoreText = String.format("<html><font size=+2><b>SCORE: %d</b></font></html>", session.getScore());
+				score.setText(scoreText);
 			} else {
 				answerStatus.setText("<html><font size =+1>Your answer is <font color=red>INCORRECT</font></html>");
 
@@ -92,7 +100,8 @@ public class GUIHandler extends JFrame implements ActionListener {
 				if (session.getScore() < 0)
 					session.addToScore(-1 * session.getScore());
 
-				score.setText(String.format("<html><font size=+2><b>SCORE: $d</b></font></html>", session.getScore()));
+				String scoreText = String.format("<html><font size=+2><b>SCORE: %d</b></font></html>", session.getScore());
+				score.setText(scoreText);
 			}
 		} catch (Exception exception) {
 			System.out.println(exception);

@@ -179,6 +179,8 @@ public class MovieList
 		return newList;
 	}
 
+	// public boolean
+
 	public MovieList copy ()
 	{
 		MovieList newList = new MovieList();

@@ -57,6 +57,8 @@ public class StartMenu extends JFrame implements ActionListener {
                 frame.setVisible(true);
             } catch (Exception err) {
                 System.out.print("Não foi possivel iniciar GUIHandler");
+                System.out.println(err);
+                err.printStackTrace();
             }
         } else {
             System.exit(0);

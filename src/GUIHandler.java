@@ -1,26 +1,26 @@
+import cinewise.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import javax.swing.*;
-import cinewise.*;
 
 public class GUIHandler extends JFrame implements ActionListener {
-	AnswerGUI answerFrame;
-	JPanel mainPanel;
-	JLabel score;
-	JLabel answerStatus;
-	JButton nextPosterButton;
-	CineSession session;
+    AnswerGUI answerFrame;
+    JPanel mainPanel;
+    JLabel score;
+    JLabel answerStatus;
+    JButton nextPosterButton;
+    CineSession session;
 
 	private boolean questionAnswered = true;
 	private String NEXTPOSTER = "next_poster";
 
 	private String answer = "";
 
-	public GUIHandler(int difficulty) throws Exception {
-		super("Menu");
+    public GUIHandler(int difficulty) throws Exception {
+        super("Menu");
 
-		session = new CineSession(difficulty);
+        session = new CineSession(difficulty);
 
 		this.setLayout(new BorderLayout());
 		mainPanel = (JPanel) this.getContentPane();

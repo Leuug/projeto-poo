@@ -6,11 +6,6 @@ SRCDIR := src
 BINDIR := bin
 LIBDIR := lib
 
-JARFILES := $(wildcard $(LIBDIR)/*.jar)
-
-ESCAPE_SPACE = $(subst _,,_ _)
-CP := $(BINDIR)$(subst $(ESCAPE_SPACE),,$(foreach jarfile,$(JARFILES),:$(strip $(jarfile))))
-
 
 # ARGUMENTOS
 focus:=
@@ -27,6 +22,7 @@ ifeq ($(OS),Windows_NT)
 	MAKE:=mingw32-make
 	CLEAR:=cls
 	NEWLINE:=@echo.
+	JAVACPSEPARATOR:=;
 else
 	PROGRAM:=bin/$(EXE)
 	MKDIR:=mkdir -p
@@ -35,10 +31,15 @@ else
 	CLEAR:=clear
 	NEWLINE:=@echo 
 	SHELL:=/bin/bash
+	JAVACPSEPARATOR:=:
 endif
 
 
 # BUSCANDO ARQUIVOS E DEFININDO ESPECTATIVAS
+JARFILES := $(wildcard $(LIBDIR)/*.jar)
+ESCAPE_SPACE = $(subst _,,_ _)
+CP := $(BINDIR)$(subst $(ESCAPE_SPACE),,$(foreach jarfile,$(JARFILES),$(JAVACPSEPARATOR)$(strip $(jarfile))))
+
 JAVAFILES := $(wildcard $(SRCDIR)/*.java) $(wildcard $(SRCDIR)/*/*.java)
 CLASSFILES := $(subst $(SRCDIR),$(BINDIR),$(subst .java,.class,$(JAVAFILES)))
 
@@ -50,6 +51,7 @@ getJavaFile=$(filter %/$(call getClassName,$(1)).java,$(JAVAFILES))
 
 # CONFIGURANDO TARGETS
 .PHONY: clean
+.IGNORE: clean
 
 
 # TARGET PADRÃO
@@ -58,12 +60,18 @@ default: all
 
 # TARGETS IMPORTANTES
 all: $(BINDIR) $(CLASSFILES)
+	@echo $(BINDIR) $(CLASSFILES)
 
 run: $(CLASSFILES)
 	$(JR) -cp $(CP) $(focus)
 
+ifeq ($(OS),Windows_NT)
 clean:
-	@$(RM) $(wildcard $(BINDIR)/*)
+	$(RM) $(subst /,\\,$(wildcard $(BINDIR)/*))
+else
+clean:
+	$(RM) $(wildcard $(BINDIR)/*)
+endif
 
 fresh: clean all
 
@@ -72,14 +80,13 @@ fresh: clean all
 clear: clean
 	$(CLEAR)
 
+
 rerun:
 	$(make) clean
 	$(make) all
 	$(CLEAR)
 	$(MAKE) run
 
-hello:
-	@echo 'Hello World!'
 
 # COMPILANDO E CRIANDO ELEMENTOS
 $(CLASSFILES): $(call getJavaFile,$@)

@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import javax.swing.*;
 import cinewise.*;
+import java.util.*;
 
 public class GUIHandler extends JFrame implements ActionListener {
 	AnswerGUI answerFrame;
@@ -40,7 +41,14 @@ public class GUIHandler extends JFrame implements ActionListener {
 
 		answerFrame = new AnswerGUI(this);
 		answerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		String [] answers = this.session.genMutipleChoises(4);
+		answerFrame.SetMovies(answers[0], answers[1], answers[2], answers[3]);
+		answerFrame.SetImage(session.getMoviePath());
+
 		answerFrame.setVisible(true);
+
+
 	}
 
 	@Override
@@ -87,6 +95,19 @@ public class GUIHandler extends JFrame implements ActionListener {
 				score.setText(String.format("<html><font size=+2><b>SCORE: $d</b></font></html>", session.getScore()));
 			}
 		} catch (Exception exception) {
+			System.out.println(exception);
+
+			try
+			{
+				System.out.println(
+					Arrays.toString(this.session.genMutipleChoises(4))
+					);
+			}
+			catch (Exception err)
+			{
+				System.out.println("Deu mais merda.");
+				System.out.println(err);
+			}
 		}
 	}
 

@@ -79,15 +79,9 @@ public class Question
 			case GUESS_NAME_MUTIPLE_CHOISE:
 			{
 				MovieList randList = movieSource.getRandList(choiseFactor);
-				int index = this.random.nextInt(randList.size());
-				System.out.println("Antes: \n");
-				System.out.println(randList);
+				int index = randList.find(this.currentMovie);
+				if (0 > index) index = this.random.nextInt(randList.size());
 				randList.setMovie(index, this.currentMovie);
-
-				System.out.println("Depois: \n");
-				
-
-				System.out.println(randList);
 				this.correctAnswer = this.currentMovie.getName();
 				return randList.getNames();
 			}

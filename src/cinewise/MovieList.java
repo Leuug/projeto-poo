@@ -179,7 +179,13 @@ public class MovieList
 		return newList;
 	}
 
-	// public boolean
+	public int find (Movie movie)
+	{
+		for (int i = 0; i < this.size(); i++) 
+			if (this.getMovie(i).equals(movie))
+				return i;
+		return -1;
+	}
 
 	public MovieList copy ()
 	{

@@ -36,6 +36,7 @@ public class GUIHandler extends JFrame implements ActionListener {
         mainPanel.add(nextPosterButton, BorderLayout.CENTER);
         nextPosterButton.addActionListener(this);
         nextPosterButton.setActionCommand(NEXTPOSTER);
+        nextPosterButton.setEnabled(false);
 
         answerStatus =
             new JLabel("<html><font size =+1>Your answer is ...</font></html>",
@@ -83,12 +84,17 @@ public class GUIHandler extends JFrame implements ActionListener {
                 }
             }
         }
+
+		nextPosterButton.setEnabled(false);
     }
 
     public void SetAnswer(String _answer) {
         System.out.println(answer);
         answer = _answer;
         questionAnswered = true;
+
+        nextPosterButton.setEnabled(true);
+
         try {
             if (session.evaluate(answer)) {
                 answerStatus.setText(

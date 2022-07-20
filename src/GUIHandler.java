@@ -6,6 +6,7 @@ import java.util.*;
 import javax.swing.*;
 
 public class GUIHandler extends JFrame implements ActionListener {
+    WinGUI win;
     AnswerGUI answerFrame;
     JPanel mainPanel;
     JLabel score;
@@ -66,6 +67,7 @@ public class GUIHandler extends JFrame implements ActionListener {
             if (questionAnswered) {
                 try {
                     if (!session.isItTheEnd()) {
+                        System.out.println(session.isItTheEnd());
                         session.nextQuestion();
                         answerStatus.setText(
                             "<html><font size =+1>Your answer is ...</font></html>");
@@ -78,7 +80,8 @@ public class GUIHandler extends JFrame implements ActionListener {
 
                         answerFrame.SetImage(session.getMoviePath());
                     } else {
-                        // End program
+                        System.out.println("alo!!!");
+                        win = new WinGUI(session, this, answerFrame, answerFrame.imageFrame);
                     }
                 } catch (Exception exception) {
                 }

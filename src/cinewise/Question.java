@@ -101,7 +101,7 @@ public class Question
 		// PADRONIZANDO A RESPOSTA
 		answer = CineUtils.standardize(answer);
 		
-		// CHECANDO SE A RESPOSTA ESTÁ CORRETA DE ACORDO COM O TIPO DA PERGUNTA
+		// CHECANDO SE A RESPOSTA ESTA CORRETA DE ACORDO COM O TIPO DA PERGUNTA
 		return this.correctAnswer.equals(answer);
 	}
 
@@ -119,11 +119,11 @@ public class Question
 		if (0 < this.type)
 		
 		{	
-			System.out.println("tchau!!!!!!!!!!!!!!\n");
+			//System.out.println("tchau!!!!!!!!!!!!!!\n");
 			return this.nextMovie();}
 		else // Questões específicas são de uso único.
 		{	
-			System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			//System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 			return true; }
 	}
 

@@ -243,7 +243,7 @@ public class MovieList
 		String separator = 
 			"\n------------------------------------------------------\n";
 
-		// INICIALIZANDO VARIÁVEIS
+		// INICIALIZANDO VARIAVEIS
 		String movieListString = "";
 
 		// CONCATENANDO A STRING DE TODOS OS FILMES DA LISTA

@@ -7,3 +7,4 @@ bin/GUIHandler.class
 bin/ImageGUI.class
 bin/StartMenu.class
 bin/*.class
+*.class

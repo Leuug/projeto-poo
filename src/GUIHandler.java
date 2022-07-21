@@ -77,7 +77,6 @@ public class GUIHandler extends JFrame implements ActionListener {
 
                         answerFrame.SetImage(session.getMoviePath());
                     } else {
-                        System.out.println("alo!!!");
                         win = new WinGUI(session, this, answerFrame, answerFrame.imageFrame);
                     }
                 } catch (Exception exception) {

@@ -58,6 +58,8 @@ public class CineSession {
 	 *         contrário.
 	 */
 	public boolean isItTheEnd() {
+        if (0 == this.questionList.getSize())
+			this.currentQuestion = null;
 		return 0 == this.questionList.getSize() &&
 				null == this.currentQuestion;
 	}

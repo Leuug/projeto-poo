@@ -113,11 +113,11 @@ public class Question {
 		if (0 < this.type)
 
 		{
-			System.out.println("tchau!!!!!!!!!!!!!!\n");
+			//System.out.println("tchau!!!!!!!!!!!!!!\n");
 			return this.nextMovie();
 		} else // Questões específicas são de uso único.
 		{
-			System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			//System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 			return true;
 		}
 	}

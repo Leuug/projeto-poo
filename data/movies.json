@@ -22,5 +22,347 @@
         "name": "back to the future",
         "img": "bttf.jpg",
         "synopsis": "Marty travels back in time using an eccentric scientist's time machine. However, he must make his high-school-aged parents fall in love in order to return to the present."
+    },
+    {
+        "id": 4,
+        "name": "back to the future 2",
+        "img": "bttf2.jpg",
+        "synopsis": "Marty Mcfly travels forward in time with the help of Dr Emmett Brown and poses as his own son to prevent his imprisonment. However, all his efforts turn futile as the future changes the present."
+    },
+    {
+        "id": 5,
+        "name": "back to the future 3",
+        "img": "bttf3.jpg",
+        "synopsis": "Marty travels back to 1885 to the Old West where Dr Emmett has fallen madly in love with a local schoolteacher. Marty must get him out of the wild West in order to save him from a premature end."
+    },
+    {
+        "id": 6,
+        "name": "avatar",
+        "img": "avatar.jpg",
+        "synopsis": "Jake, who is paraplegic, replaces his twin on the Na'vi inhabited Pandora for a corporate mission. After the natives accept him as one of their own, he must decide where his loyalties lie."
+    },
+    {
+        "id": 7,
+        "name": "the avengers",
+        "img": "avengers.jpg",
+        "synopsis": "Nick Fury is compelled to launch the Avengers Initiative when Loki poses a threat to planet Earth. His squad of superheroes put their minds together to accomplish the task."
+    },
+    {
+        "id": 8,
+        "name": "the godfather",
+        "img": "godfather.jpg",
+        "synopsis": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger."
+    },
+    {
+        "id": 9,
+        "name": "saving private ryan",
+        "img": "spr.jpg",
+        "synopsis": "During the Normandy invasion of World War II, Captain John Miller is assigned the task of searching for Private James Ryan, whose three brothers have already been killed in the war."
+    },
+    {
+        "id": 10,
+        "name": "blade runner",
+        "img": "bladerunner.jpg",
+        "synopsis": "Rick Deckard, an ex-policeman, becomes a special agent with a mission to exterminate a group of violent androids. As he starts getting deeper into his mission, he questions his own identity."
+    },
+    {
+        "id": 11,
+        "name": "american psycho",
+        "img": "apsycho.jpg",
+        "synopsis": "Patrick Bateman, a wealthy investment banker, hides his psychopathic ego from his friends. Later, his illogical fantasies escalate and he submits to an uncontrollable bloodlust."
+    },
+    {
+        "id": 12,
+        "name": "shrek",
+        "img": "shrek.jpg",
+        "synopsis": "An ogre, embarks on a journey with a donkey to rescue Princess Fiona from a vile lord and regain his swamp."
+    },
+    {
+        "id": 13,
+        "name": "toy story",
+        "img": "toystory.jpg",
+        "synopsis": "Woody (Tom Hanks), a good-hearted cowboy doll who belongs to a young boy named Andy (John Morris), sees his position as Andy's favorite toy jeopardized when his parents buy him a Buzz Lightyear (Tim Allen) action figure. Even worse, the arrogant Buzz thinks he's a real spaceman on a mission to return to his home planet. When Andy's family moves to a new house, Woody and Buzz must escape the clutches of maladjusted neighbor Sid Phillips (Erik von Detten) and reunite with their boy."
+    },
+    {
+        "id": 14,
+        "name": "toy story 2",
+        "img": "toystory2.jpg",
+        "synopsis": "When Woody is kidnapped by a greedy toy collector and is nowhere to be found, Buzz and his friends set out to rescue him. However, Woody gets tempted by the idea of becoming immortal in a museum."
+    },
+    {
+        "id": 15,
+        "name": "toy story 3",
+        "img": "toystory3.jpg",
+        "synopsis": "Before Andy leaves for college, his toys are mistakenly delivered to a day care centre. Woody convinces the other toys that they were not dumped and leads them on an expedition back home."
+    },
+    {
+        "id": 16,
+        "name": "how to train your dragon",
+        "img": "httyd.jpg",
+        "synopsis": "Hiccup, a Viking, must kill a dragon to mark his passage into manhood and be initiated into his tribe. However, he ends up doing the exact opposite by befriending a deadly dragon, Night Fury."
+    },
+    {
+        "id": 17,
+        "name": "kung fu panda",
+        "img": "kfp.jpg",
+        "synopsis": "When Po the Panda, a kung fu enthusiast, gets selected as the Dragon Warrior, he decides to team up with the Furious Five and destroy the evil forces that threaten the Valley of Peace."
+    },
+    {
+        "id": 18,
+        "name": "spider-man",
+        "img": "spiderman.jpg",
+        "synopsis": "Peter Parker's life changes when he is bitten by a genetically altered spider and gains superpowers. He uses his powers to help people and finds himself facing the Green Goblin, an evil maniac."
+    },
+    {
+        "id": 19,
+        "name": "spider-man 2",
+        "img": "spiderman2.jpg",
+        "synopsis": "Peter Parker is dissatisfied with life when he loses his job, the love of his life, Mary Jane, and his powers. Amid all the chaos, he must fight Doctor Octavius who threatens to destroy New York City."
+    },
+    {
+        "id": 20,
+        "name": "spider-man 3",
+        "img": "spiderman3.jpg",
+        "synopsis": "Peter Parker becomes one with a symbiotic alien that bolsters his Spider-Man avatar and affects his psyche. He also has to deal with Sandman and maintain a fragmented relationship with Mary Jane."
+    },
+    {
+        "id": 21,
+        "name": "iron man",
+        "img": "ironman.jpg",
+        "synopsis": "When Tony Stark, an industrialist, is captured, he constructs a high-tech armoured suit to escape. Once he manages to escape, he decides to use his suit to fight against evil forces to save the world."
+    },
+    {
+        "id": 22,
+        "name": "captain america: the first avenger",
+        "img": "catfa.jpg",
+        "synopsis": "During World War II, Steve Rogers decides to volunteer in an experiment that transforms his weak body. He must now battle a secret Nazi organisation headed by Johann Schmidt to defend his nation."
+    },
+    {
+        "id": 23,
+        "name": "thor",
+        "img": "thor.jpg",
+        "synopsis": "Thor is exiled by his father, Odin, the King of Asgard, to the Earth to live among mortals. When he lands on Earth, his trusted weapon Mjolnir is discovered and captured by S.H.I.E.L.D."
+    },
+    {
+        "id": 24,
+        "name": "john wick",
+        "img": "johnwick.jpg",
+        "synopsis": "Legendary assassin (Keanu Reeves) retired from his violent career after marrying the love of his life. Her sudden death leaves him in deep mourning. When sadistic mobster Iosef Tarasov (Alfie Allen) and his thugs steal his prized car and kill the puppy that was a last gift from his wife, John unleashes the remorseless killing machine within and seeks vengeance. Meanwhile, Iosef's father (Michael Nyqvist) -- John's former colleague -- puts a huge bounty on John's head."
+    },
+    {
+        "id": 25,
+        "name": "indiana jones and the temple of doom",
+        "img": "ijattod.jpg",
+        "synopsis": "Indiana Jones, a legendary archaeologist, finds himself in India, where a bunch of poor villagers reaches out to him to track down an ancient stone that has been stolen by an evil priest."
+    },
+    {
+        "id": 26,
+        "name": "raiders of the lost ark",
+        "img": "rotla.jpg",
+        "synopsis": "Archaeology professor Indiana Jones ventures to seize a biblical artefact known as the Ark of the Covenant. While doing so, he puts up a fight against Renee and a troop of Nazis."
+    },
+    {
+        "id": 27,
+        "name": "indiana jones and the last crusade",
+        "img": "ijatlc.jpg",
+        "synopsis": "When Indiana Jones, an archaeologist, learns that his father, Dr Henry Jones, has disappeared while looking for the Holy Grail, he embarks on a journey to get to him before the Nazis."
+    },
+    {
+        "id": 28,
+        "name": "pulp fiction",
+        "img": "pulpfiction.jpg",
+        "synopsis": "In the realm of underworld, a series of incidents intertwines the lives of two Los Angeles mobsters, a gangster's wife, a boxer and two small-time criminals."
+    },
+    {
+        "id": 29,
+        "name": "kill bill: the whole bloody afair",
+        "img": "killbill.jpg",
+        "synopsis": "The Bride must kill her ex-boss and lover Bill who betrayed her at her wedding rehearsal, shot her in the head and took away her unborn daughter. But first, she must make the other four members of the Deadly Viper Assassination Squad suffer."
+    },
+    {
+        "id": 30,
+        "name": "mission: impossible",
+        "img": "mi.jpg",
+        "synopsis": "Ethan Hunt, an American special agent, struggles to prove his innocence and catch the real culprit when he is falsely accused of murdering his entire team."
+    },
+    {
+        "id": 31,
+        "name": "top gun",
+        "img": "topgun.jpg",
+        "synopsis": "After losing his friend, top pilot Maverick is given a second chance to redeem himself. He struggles to be at his best and also gets romantically involved with his civilian instructor Charlie."
+    },
+    {
+        "id": 32,
+        "name": "bullit",
+        "img": "bullit.jpg",
+        "synopsis": "When mobsters kill the witness he was assigned to protect, a dedicated policeman investigates the case on his own."
+    },
+    {
+        "id": 33,
+        "name": "halloween",
+        "img": "halloween.jpg",
+        "synopsis": "On a cold Halloween night in 1963, six year old Michael Myers brutally murdered his 17-year-old sister, Judith. He was sentenced and locked away for 15 years. But on October 30, 1978, while being transferred for a court date, a 21-year-old Michael Myers steals a car and escapes Smith's Grove. He returns to his quiet hometown of Haddonfield, Illinois, where he looks for his next victims."
+    },
+    {
+        "id": 34,
+        "name": "alien",
+        "img": "alien.jpg",
+        "synopsis": "The crew of a spacecraft, Nostromo, intercept a distress signal from a planet and set out to investigate it. However, to their horror, they are attacked by an alien which later invades their ship."
+    },
+    {
+        "id": 35,
+        "name": "predator",
+        "img": "predator.jpg",
+        "synopsis": "Dutch and his team are out on a mission to rescue a group of hostages in Central America. There, they discover that they are being targeted by an extraterrestrial warrior."
+    },
+    {
+        "id": 36,
+        "name": "the thing",
+        "img": "thething.jpg",
+        "synopsis": "A research team finds an alien being that has fallen from the sky and is starting to hunt them down. Things take a sinister turn when they realise that the creature can take the shape of its victims."
+    },
+    {
+        "id": 37,
+        "name": "a nightmare on elm street",
+        "img": "anoes.jpg",
+        "synopsis": "A young girl realises that she has to stay awake at any cost to avoid the clawed killer who is butchering her friends one by one in their dreams."
+    },
+    {
+        "id": 38,
+        "name": "the shining",
+        "img": "shining.jpg",
+        "synopsis": "Jack and his family move into an isolated hotel with a violent past. Living in isolation, Jack begins to lose his sanity, which affects his family members."
+    },
+    {
+        "id": 39,
+        "name": "forest gump",
+        "img": "forestgump.jpg",
+        "synopsis": "Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny."
+    },
+    {
+        "id": 40,
+        "name": "bad boys",
+        "img": "badboys.jpg",
+        "synopsis": "Marcus, a family man, and Mike, a ladies' man, are partners in the Miami police. Things get complicated when they assume each other's identity while investigating a drug deal."
+    },
+    {
+        "id": 41,
+        "name": "baby driver",
+        "img": "babydriver.jpg",
+        "synopsis": "Doc forces Baby, a former getaway driver, to partake in a heist, threatening to hurt his girlfriend if he refuses. But the plan goes awry when their arms dealers turn out to be undercover officers."
+    },
+    {
+        "id": 42,
+        "name": "interstellar",
+        "img": "interstellar.jpg",
+        "synopsis": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
+    },
+    {
+        "id": 43,
+        "name": "dunkirk",
+        "img": "dunkirk.jpg",
+        "synopsis": "During World War II, soldiers from the British Empire, Belgium and France try to evacuate from the town of Dunkirk during a arduous battle with German forces."
+    },
+    {
+        "id": 44,
+        "name": "inception",
+        "img": "inception.jpg",
+        "synopsis": "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son."
+    },
+    {
+        "id": 45,
+        "name": "dune",
+        "img": "dune.jpg",
+        "synopsis": "Paul Atreides arrives on Arrakis after his father accepts the stewardship of the dangerous planet. However, chaos ensues after a betrayal as forces clash to control melange, a precious resource."
+    },
+    {
+        "id": 46,
+        "name": "the mummy",
+        "img": "mummy.jpg",
+        "synopsis": "Adventurer Rick O'Connell and Egyptologist Evelyn, along with a bunch of archaeologists, inadvertently wake up an evil mummy during an archaeological excavation at the ancient city of Hamunaptra."
+    },
+    {
+        "id": 47,
+        "name": "the matrix",
+        "img": "matrix.jpg",
+        "synopsis": "Thomas Anderson, a computer programmer, is led to fight an underground war against powerful computers who have constructed his entire reality with a system called the Matrix"
+    },
+    {
+        "id": 48,
+        "name": "hellboy",
+        "img": "hellboy.jpg",
+        "synopsis": "Hellboy is a demonic warrior who protects the Earth from paranormal threats. When an enemy from his past makes a comeback, it is up to him and his team to stop the villain once and for all."
+    },
+    {
+        "id": 49,
+        "name": "pacific rim",
+        "img": "./pacificrim.jpg",
+        "synopsis": "The government assumes the Jaegers, robotic war machines battling the Kaijus, to be ineffective. However, Stacker Pentecost's team believes that only the Jaegers can save the world from destruction."
+    },
+    {
+        "id": 50,
+        "name": "men in black",
+        "img": "mib.jpg",
+        "synopsis": "K and J, are the scum-fighting super-agents. their latest mission is to save the world from a total intergalactic disaster."
+    },
+    {
+        "id": 51,
+        "name": "transformers",
+        "img": "transformers.jpg",
+        "synopsis": "The noble Autobots and Decepticons, two intergalactic races of robots, crash land on Earth. They battle for Allspark, the ultimate power source, whose location is held by Sam."
+    },
+    {
+        "id": 52,
+        "name": "jurassic park",
+        "img": "jurassic.jpg",
+        "synopsis": "John Hammond, an entrepreneur, opens a wildlife park containing cloned dinosaurs. However, a breakdown of the island's security system causes the creatures to escape and bring about chaos."
+    },
+    {
+        "id": 53,
+        "name": "the dark knight",
+        "img": "darkknight.jpg",
+        "synopsis": "After Gordon, Dent and Batman begin an assault on Gotham's organised crime, the mobs hire the Joker, a psychopathic criminal mastermind who offers to kill Batman and bring the city to its knees."
+    },
+    {
+        "id": 54,
+        "name": "everything everywhere all at once",
+        "img": "eeaao.jpg",
+        "synopsis": "When an interdimensional rupture unravels reality, an unlikely hero must channel her newfound powers to fight bizarre and bewildering dangers from the multiverse as the fate of the world hangs in the balance."
+    },
+    {
+        "id": 55,
+        "name": "jumanji",
+        "img": "jumanji",
+        "synopsis": "Two children come across a magical board game. While playing it, they meet Alan, a man who was trapped in the game, and attempt to free him while facing different kinds of danger."
+    },
+    {
+        "id": 56,
+        "name": "zathura",
+        "img": "zathura.jpg",
+        "synopsis": "Two young brothers find themselves transported into the depths of space while playing a board game. They try their best to find their way back to Earth."
+    },
+    {
+        "id": 57,
+        "name": "the polar express",
+        "img": "polarexpress.jpg",
+        "synopsis": "A young boy boards a train and embarks on an extraordinary journey to the North Pole to meet Santa Claus. His life takes a turn after he encounters special people that make his journey memorable."
+    },
+    {
+        "id": 58,
+        "name": "the lord of the rings: the fellowship of the ring",
+        "img": "tlotrtfotr.jpg",
+        "synopsis": "A young hobbit, Frodo, who has found the One Ring that belongs to the Dark Lord Sauron, begins his journey with eight companions to Mount Doom, the only place where it can be destroyed."
+    },
+    {
+        "id": 59,
+        "name": "the lord of the rings: the two towers",
+        "img": "tlotrttt.jpg",
+        "synopsis": "Frodo and Sam arrive in Mordor with the help of Gollum. A number of new allies join their former companions to defend Isengard as Saruman launches an assault from his domain."
+    },
+    {
+        "id": 60,
+        "name": "the lord of the rings: the return of the king",
+        "img": "tlotrrotk.jpg",
+        "synopsis": "The former Fellowship members prepare for the final battle. While Frodo and Sam approach Mount Doom to destroy the One Ring, they follow Gollum, unaware of the path he is leading them to."
     }
 ]

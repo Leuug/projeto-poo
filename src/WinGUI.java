@@ -5,136 +5,125 @@ import cinewise.*;
 import java.io.*;
 import java.util.*;
 
-public class WinGUI extends JFrame implements ActionListener{
-    
-    private JPanel win;
-    private JButton restartButton;
-    private JButton quitButton;
-    private JLabel nomeLabel;
-    private JLabel Leaderboard;
+public class WinGUI extends JFrame implements ActionListener {
 
-    private String RESTART = "restart";
-    private String QUIT = "quit";
+	private JPanel win;
+	private JButton restartButton;
+	private JButton quitButton;
+	private JLabel nomeLabel;
+	private JLabel Leaderboard;
 
-    public WinGUI(CineSession session, GUIHandler score, AnswerGUI answer, ImageGUI image) throws Exception {
-        score.setVisible(false);    
-        answer.setVisible(false);
-        image.setVisible(false);
+	private String RESTART = "restart";
+	private String QUIT = "quit";
 
-        int pontos = session.getScore();
+	public WinGUI(CineSession session, GUIHandler score, AnswerGUI answer, ImageGUI image) throws Exception {
+		score.setVisible(false);
+		answer.setVisible(false);
+		image.setVisible(false);
 
-        File arquivo = new File("Leaderboard.txt");
-        boolean existe = arquivo.exists();
+		int pontos = session.getScore();
 
-        if(existe == false){
-            arquivo.createNewFile();
-        }
+		File arquivo = new File("Leaderboard.txt");
+		boolean existe = arquivo.exists();
 
-        Integer[] num = new Integer[4];
-        int i;
+		if (existe == false) {
+			arquivo.createNewFile();
+		}
 
-        FileReader fr = new FileReader(arquivo);
-        BufferedReader br = new BufferedReader(fr);
+		Integer[] num = new Integer[4];
+		int i;
 
-        for(i = 0; i < 4; i++){
-            num[i] = 0;
-        }
+		FileReader fr = new FileReader(arquivo);
+		BufferedReader br = new BufferedReader(fr);
 
-        for(i = 0; br.ready(); i++){
-            String linha = br.readLine();
-            num[i] = Integer.parseInt(linha);
-        }
+		for (i = 0; i < 4; i++) {
+			num[i] = 0;
+		}
 
-        br.close();
-        fr.close();
+		for (i = 0; br.ready(); i++) {
+			String linha = br.readLine();
+			num[i] = Integer.parseInt(linha);
+		}
 
-        num[3] = pontos;
-        for(i = 0; i < 4; i++){
-            System.out.println(num[i]);
-        }
-        
-        Arrays.sort(num, Collections.reverseOrder());
+		br.close();
+		fr.close();
 
-        FileWriter fw = new FileWriter(arquivo);
-        BufferedWriter bw = new BufferedWriter(fw);
-        
-        for(i = 0; i < 3; i++){
-            System.out.println(num[i]);
-            bw.write(String.valueOf(num[i]));
-            bw.newLine();
-        }
+		num[3] = pontos;
+		for (i = 0; i < 4; i++) {
+			System.out.println(num[i]);
+		}
 
-        bw.close();
-        fw.close();
+		Arrays.sort(num, Collections.reverseOrder());
 
-        win = (JPanel)this.getContentPane();
-        win.setLayout(new GridBagLayout());
+		FileWriter fw = new FileWriter(arquivo);
+		BufferedWriter bw = new BufferedWriter(fw);
 
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.insets = new Insets(2, 2, 40, 2);
+		for (i = 0; i < 3; i++) {
+			System.out.println(num[i]);
+			bw.write(String.valueOf(num[i]));
+			bw.newLine();
+		}
 
-        String scoreLabel =
-            String.format("<html><font size=+2><b>O jogo acabou!<br/>Seu score: %d</b></font></html>",
-                          pontos);
-        nomeLabel = new JLabel(scoreLabel);
-        constraints.gridy = 0;
-        win.add(nomeLabel, constraints);
+		bw.close();
+		fw.close();
 
-        constraints.insets = new Insets(2, 2, 2, 2);
+		win = (JPanel) this.getContentPane();
+		win.setLayout(new GridBagLayout());
 
-        restartButton = new JButton("Restart!");
-        restartButton.addActionListener(this);
-        restartButton.setActionCommand(RESTART);
-        constraints.gridy = 1;
-        win.add(restartButton, constraints);
+		GridBagConstraints constraints = new GridBagConstraints();
+		constraints.fill = GridBagConstraints.HORIZONTAL;
+		constraints.insets = new Insets(2, 2, 40, 2);
 
-        quitButton = new JButton("Quit!");
-        quitButton.addActionListener(this);
-        quitButton.setActionCommand(QUIT);
-        constraints.gridx = 0;
-        constraints.gridy = 2;
-        win.add(quitButton, constraints);
+		String scoreLabel = String.format("<html><font size=+2><b>O jogo acabou!<br/>Seu score: %d</b></font></html>",
+				pontos);
+		nomeLabel = new JLabel(scoreLabel);
+		constraints.gridy = 0;
+		win.add(nomeLabel, constraints);
 
-        String leaderboardLabel = 
-            String.format("<html><font size=+2><b><br/>1st: %d<br/>2nd: %d<br/>3rd: %d</b></font></html>",
-                            num[0], num[1], num[2]);
-        Leaderboard = new JLabel(leaderboardLabel);
-        constraints.gridx = 0;
-        constraints.gridy = 4;
+		constraints.insets = new Insets(2, 2, 2, 2);
+
+		restartButton = new JButton("Restart!");
+		restartButton.addActionListener(this);
+		restartButton.setActionCommand(RESTART);
+		constraints.gridy = 1;
+		win.add(restartButton, constraints);
+
+		quitButton = new JButton("Quit!");
+		quitButton.addActionListener(this);
+		quitButton.setActionCommand(QUIT);
+		constraints.gridx = 0;
+		constraints.gridy = 2;
+		win.add(quitButton, constraints);
+
+		String leaderboardLabel = String.format(
+				"<html><font size=+2><b><br/>1st: %d<br/>2nd: %d<br/>3rd: %d</b></font></html>",
+				num[0], num[1], num[2]);
+		Leaderboard = new JLabel(leaderboardLabel);
+		constraints.gridx = 0;
+		constraints.gridy = 4;
 		win.add(Leaderboard, constraints);
 
-        setSize(500, 400);
-        this.setVisible(true);
-    }
+		setSize(500, 400);
+		this.setVisible(true);
+	}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (RESTART.equals(e.getActionCommand())) {
-            this.setVisible(false);
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (RESTART.equals(e.getActionCommand())) {
+			this.setVisible(false);
 
-            // CineSession session = new CineSession(0);
-            try {
-                GUIHandler frame = new GUIHandler(100);
-                frame.setSize(300, 150);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-            } catch (Exception err) {
-                System.out.print("Não foi possivel iniciar GUIHandler");
-                System.out.println(err);
-                err.printStackTrace();
-            }
-        } else {
-            System.exit(0);
-        }
-    }
-
-//     public static void main(String[] args) throws Exception {
-//         CineSession session = new CineSession(10);
-//         GUIHandler handler = new GUIHandler(10);
-//         AnswerGUI answerFrame = new AnswerGUI(handler);
-//         WinGUI frame = new WinGUI(session, handler, answerFrame, answerFrame.imageFrame);
-//         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//         frame.setVisible(true);
-//     }
+			try {
+				GUIHandler frame = new GUIHandler(100);
+				frame.setSize(300, 150);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(true);
+			} catch (Exception err) {
+				System.out.print("Não foi possivel iniciar GUIHandler");
+				System.out.println(err);
+				err.printStackTrace();
+			}
+		} else {
+			System.exit(0);
+		}
+	}
 }

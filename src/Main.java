@@ -1,4 +1,3 @@
-import cinewise.CineSession;
 import javax.swing.*;
 
 public class Main {

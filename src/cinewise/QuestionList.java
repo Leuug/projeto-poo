@@ -3,8 +3,6 @@ package cinewise;
 
 // IMPORTANDO PACOTES ÚTEIS DO JAVA
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.io.FileReader;
 import java.util.Random;
@@ -12,7 +10,6 @@ import java.util.Random;
 // IMPORTANDO PACOTES PARA A MANIPULAÇÃO DE ARQUIVOS JSON
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
-import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 /**

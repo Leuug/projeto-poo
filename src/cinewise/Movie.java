@@ -1,8 +1,6 @@
 // PACOTE AO QUAL ESSA CLASSE PERTENCE
 package cinewise;
 
-import java.lang.annotation.Retention;
-
 // IMPORTANDO PACOTES PARA A MANIPULAÇÃO DE ARQUIVOS JSON
 import org.json.simple.JSONObject;
 
@@ -39,6 +37,13 @@ public class Movie {
 	 */
 	public String getName() {
 		return this.movieName;
+	}
+
+	/**
+	 * @return O id do filme.
+	 */
+	public int getId() {
+		return this.id;
 	}
 
 	/**

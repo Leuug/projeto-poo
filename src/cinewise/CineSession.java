@@ -134,7 +134,7 @@ public class CineSession {
 	 * Retorna um filme em determinado indicie da lista de filmes da pergunta
 	 * atual.
 	 * 
-	 * @param index Índicie do filme a ser retornado.
+	 * @param index Indicie do filme a ser retornado.
 	 * @return Um filme ou null.
 	 */
 	public Movie getMovie(int index) {

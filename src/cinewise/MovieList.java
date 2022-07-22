@@ -1,3 +1,9 @@
+/**
+ * @author Raphael Zoega Cali Gomes (11800729)
+ * @author Bernardo Maia Coelho (12542481).
+ */
+
+
 // PACOTE AO QUAL ESSA CLASSE PERTENCE
 package cinewise;
 

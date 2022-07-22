@@ -1,3 +1,9 @@
+/**
+ * @author Bernardo Maia Coelho (12542481).
+ */
+
+
+
 package cinewise;
 
 // IMPORTANDO PACOTES ÚTEIS DO JAVA

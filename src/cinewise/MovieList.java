@@ -94,10 +94,7 @@ public class MovieList {
 	 * @return um filme aleatório da lista.
 	 */
 	public Movie getRandMovie() {
-		// System.out.println("Size " + this.moviesList.size() + "\n");
 		int index = this.random.nextInt(this.moviesList.size());
-		// System.out.println("Size " + this.moviesList.size() + " index " + index +
-		// "\n");
 		return this.moviesList.get(index);
 	}
 

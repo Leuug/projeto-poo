@@ -42,9 +42,6 @@ public class Question {
 		this.inquiry = (String) jsonObject.get("inquiry");
 		this.correctAnswer = CineUtils.standardize((String) jsonObject.get("answer"));
 
-		// System.out.println("TYPE " + this.type + "\n");
-		// System.out.println(movieSource);
-
 		// INDENTIFICANDO O TIPO E CARREGANDO DADOS
 		/*
 		 * OBS: Tipos com valor positivo são considerados genéricos e sua lista
@@ -59,7 +56,6 @@ public class Question {
 				this.movieList.AddMovie(movieSource.getMovie(movieName));
 		} else {
 			this.movieList = movieSource.copy();
-			// System.out.println(this.movieList);
 		}
 
 		this.moreData = (JSONObject) jsonObject.get("more");
@@ -109,11 +105,8 @@ public class Question {
 		if (0 < this.type)
 
 		{
-			//System.out.println("tchau!!!!!!!!!!!!!!\n");
 			return this.nextMovie();
-		} else // Questões específicas são de uso único.
-		{
-			//System.out.println("Oi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+		} else { // Questões específicas são de uso único.
 			return true;
 		}
 	}
@@ -122,7 +115,6 @@ public class Question {
 		if (0 >= this.movieList.size())
 			throw new Exception("Movie list is unexpectedly empty.");
 
-		System.out.println("Moving On.\n");
 		this.currentMovie = this.movieList.getRandMovie();
 		this.movieList.RemoveMovie(currentMovie);
 

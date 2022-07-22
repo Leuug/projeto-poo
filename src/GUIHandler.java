@@ -47,10 +47,10 @@ public class GUIHandler extends JFrame implements ActionListener {
 		String[] answers = this.session.genMutipleChoises(4);
 		String correctAnswer = this.session.getCorrectAnswer();
 
-		System.out.println("A resposta esperada: " + correctAnswer + "\n");
-		System.out.println("As opções: " + Arrays.toString(answers) + "\n");
-		System.out.println("Ibagens: " + this.session.getMoviePath() + "\n");
-		System.out.println("Nome: " + this.session.getMovieName() + "\n");
+		// System.out.println("A resposta esperada: " + correctAnswer + "\n");
+		// System.out.println("As opções: " + Arrays.toString(answers) + "\n");
+		// System.out.println("Imagens: " + this.session.getMoviePath() + "\n");
+		// System.out.println("Nome do filme: " + this.session.getMovieName() + "\n");
 
 		answerFrame.SetMovies(answers[0], answers[1], answers[2], answers[3]);
 		answerFrame.SetImage(session.getMoviePath());
@@ -123,7 +123,6 @@ public class GUIHandler extends JFrame implements ActionListener {
 				System.out.println(
 						Arrays.toString(this.session.genMutipleChoises(4)));
 			} catch (Exception err) {
-				System.out.println("Deu mais merda.");
 				System.out.println(err);
 			}
 		}

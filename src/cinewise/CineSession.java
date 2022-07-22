@@ -2,6 +2,7 @@ package cinewise;
 
 import java.util.*;
 
+
 public class CineSession {
 	// private int difficulty;
 	private MovieList movieList;
@@ -40,7 +41,6 @@ public class CineSession {
 
 		this.currentQuestion = this.questionList.getRandQuestion();
 		if (this.currentQuestion.getHitHard()) {
-			System.out.println("Forte de mais\n\n");
 			this.questionList.RemoveQuestion(this.currentQuestion);
 		}
 	}
@@ -214,17 +214,8 @@ public class CineSession {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// try
-		// {
 		CineSession cs = new CineSession(10, "data");
 		System.out.println(Arrays.toString(cs.genMutipleChoises(4)));
 		System.out.println(cs.getCorrectAnswer());
-
-		// }
-		// catch (Exception e)
-		// {
-		// System.out.println("An error has occurred.");
-		// System.out.println(e);
-		// }
 	}
 }
